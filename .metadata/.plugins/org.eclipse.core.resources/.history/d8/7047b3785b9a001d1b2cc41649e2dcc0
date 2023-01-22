@@ -1,0 +1,6 @@
+package com.nani;
+
+public class Home extends HttpServlet{
+	public void service()
+
+}

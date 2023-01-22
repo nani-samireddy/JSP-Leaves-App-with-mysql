@@ -1,0 +1,9 @@
+package com.nani;
+
+public class Leave {
+	String date;
+	String type;
+	String signum;
+	String name;
+
+}

@@ -1,0 +1,33 @@
+package com.nani;
+
+public class Leave {
+	String date;
+	String type;
+	String signum;
+	public Leave(String date, String type, String signum) {
+		super();
+		this.date = date;
+		this.type = type;
+		this.signum = signum;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getSignum() {
+		return signum;
+	}
+	public void setSignum(String signum) {
+		this.signum = signum;
+	}
+	
+
+}

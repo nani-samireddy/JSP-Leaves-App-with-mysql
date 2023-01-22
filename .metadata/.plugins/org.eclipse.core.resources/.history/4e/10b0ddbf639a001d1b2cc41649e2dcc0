@@ -1,0 +1,55 @@
+package com.nani;
+
+import java.sql.*;
+
+public class DatabaseService {
+	
+	
+	String url = "jdbc:mysql://localhost:3306/leaves";
+	String user = "root";
+	String pass = "Root@123";
+	
+	
+	public void load() throws ClassNotFoundException, SQLException {
+		String driver = "com.mysql.jdbc.Driver";
+		Class.forName(driver);
+	}
+	
+	public Employee[] getEmployeNames() throws SQLException, ClassNotFoundException {
+		//Connection to Db
+		load();
+		Connection con = DriverManager.getConnection(url, user, pass);
+		
+		//Creating statement
+		Statement stmt = con.createStatement();
+		
+		//getting the number of Rows
+	    String query = "select count(*) from Cricketers_Data";
+		ResultSet rs = stmt.executeQuery(query);
+		rs.next();
+		int numberOfRows = rs.getInt(1);
+		
+		
+		Employee[] employees = new Employee[numberOfRows];
+		
+		//getting full employees details
+		query = "select * from employee";
+		rs = stmt.executeQuery(query);
+		rs.next();
+		
+		//mapping employee table to employee class
+		int index = 0;
+		while(rs.next()) {
+			String signum = rs.getString("signum");
+			String name = rs.getString("name");
+			Employee e = new Employee(name,signum);
+			employees[index] = e;
+			index++;
+		}
+		
+		con.close();
+		return employees;
+
+	}
+
+}

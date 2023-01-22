@@ -1,0 +1,13 @@
+package com.nani;
+
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class Home extends HttpServlet{
+	public void service(HttpServletRequest req, HttpServletResponse res) {
+		
+		RequestDispatcher rd = req.getRequestDispatcher("home.jsp")
+	}
+
+}

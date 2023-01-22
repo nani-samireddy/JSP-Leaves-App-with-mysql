@@ -1,0 +1,23 @@
+package com.nani;
+
+public class Employee {
+	String name;
+	String signum;
+	public Employee(String name, String signum) {
+		this.name = name;
+		this.empId = signum;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmpId() {
+		return signum;
+	}
+	public void setEmpId(String signum) {
+		this.signum = signum;
+	}
+	
+}

@@ -1,0 +1,37 @@
+package com.nani;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/home")
+public class Home extends HttpServlet{
+	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+		String title = "Home";
+		req.setAttribute("title", title );
+		
+		if(req.getParameter("EmployeeNames")!=null) 
+		{
+			System.out.println("YESSS!!!");
+		}
+		try {
+			req.setAttribute("empsDetails", new DatabaseService().getEmployeNames() );
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		RequestDispatcher rd = req.getRequestDispatcher("home.jsp");
+		rd.forward(req, res);
+	}
+
+}
