@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+/Users/samireddynani/Desktop/JSPWS/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-1796619057.index
-2098832467.index
-680802174.index
-932311448.index
-1883841706.index
-1547928172.index
-1636122963.index
